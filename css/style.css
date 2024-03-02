@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+    --abu:#C3C6D1;
+    --gelap:#7469B6;
+    --ringan:#FFE6E6;
+    --medium:#AD88C6;
+    --semi:#E1AFD1;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+
+}
+
+body{
+    /* background-color: var(--ringan); */
+}
+
+*{
+    font-family: Nunito;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+/* header start */
+
+header{
+    position: relative;
+    width: 100%;
+    background-color: var(--gelap);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+}
+
+header .logo{
+    color: white;
+    font-size: 1.7rem;
+    font-weight: bolder;
+}
+
+header .menu-nav a{
+    font-size: 1rem;
+    color: #C3C6D1;
+    padding:  1rem;
+}
+
+ .menu-nav a.active, header .menu-nav a :hover{
+    color: #fff;
+    border-bottom: solid white 1px;
+}
+/* hero start */
+
+.hero{
+    margin: 1rem 3rem 0px 3rem;
+    border-radius: 10px;
+    background-color: var(--ringan);
+    padding: 30px;
+    height: 130vh;
+}
+
+.container-hero h1{
+    color: var(--gelap);
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+#map{
+    width: 100%;
+    height: 20rem;
+    border: solid 0.4px #C3C6D1;
+    border-radius: 10px;
+}
+
+img{
+    position: absolute;
+    width: 25rem;
+    height: 23rem;
+}
+
+.wrapper, .form{
+    justify-content: end;
+    align-items: center;
+    display: flex;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--medium);
+    border-radius: 10px;
+    width: 25rem;
+    height: 20rem;
+    box-shadow: var(--box-shadow);
+    margin:4rem 10rem 0rem 0rem;
+}
+
+.form input{
+    border-radius: 10px;
+    height: 2.5rem;
+    width: 18rem;
+    border: solid 1px var(--abu);
+}
+
+.column select {
+    outline: none;
+    border: solid 1px var(--abu);
+    border-radius: 10px;
+    height: 40px;
+    width: 18rem;
+    font-size: 19px;
+  }
+ button{
+    background-color: var(--gelap);
+    width: 18rem;
+    height:2.5rem;
+    margin-top: 12px;
+    border-radius: 10px;
+
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Warna latar belakang hitam dengan opasitas */
+    z-index: 9999; /* Untuk memastikan overlay ditampilkan di atas elemen lain */
+  }
+  
+  .overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  #close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+

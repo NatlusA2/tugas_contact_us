@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>Contact Us</title>
+        <!-- css -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- font -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- leaflet js -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+ crossorigin=""></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script>
+    $(document).ready(function(){
+      $('button').click(function(){
+        var nama = $('input[name="nama"]').val();
+        var kota = $('select[name="kota"]').val();
+        var provinsi = $('select[name="provinsi"]').val();
+        var pesan = $('input[name="pesan"]').val();
+        var message = "Halo! Saya " + nama + " dari " + kota + ", " + provinsi + ". " + pesan;
+        var whatsappLink = "https://api.whatsapp.com/send?phone=6287762000553&text=" + encodeURIComponent(message);
+        window.open(whatsappLink, '_blank');
+        $('#overlay').fadeIn();
+      });
+      $('#close').click(function(){
+    $('#overlay').fadeOut();
+  });
+    });
+    </script>
+    </head>
+    <body>
+        <!-- navbar start -->
+        <header>
+            <a href="#" class="logo">TiketKu<i class="fa-solid fa-plane" style="color: #ffffff;"></i></a>
+            <div class="menu-nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a class="active"  href="#">Contact Us</a>
+            </div>    
+        </header>
+        <!-- navbar end -->
+        
+        <!-- hero start -->
+        <section class="hero">
+            <div class="container-hero">
+                <div class="desc-hero"><h1>temukan kami : </h1></div>
+                <div id="map"></div>
+                <h1 style="margin-top: 15px;">atau Hubungin kami : </h1>
+            </div>
+            <img src="img/telpun.png" alt="" srcset="">
+            <div class="wrapper">
+            <div class="form">
+            <div class="column">
+                <p>Nama mu : </p>
+                <input type="text" name="nama" placeholder="Nama">
+            </div>
+
+            <div class="column">
+                <p>Asal kota :</p>
+                <select name="kota">
+                    <option value="banjar">banjar</option>
+                    <option value="sukabumi">sukabumi</option>
+                </select>
+            </div>
+
+            <div class="column">
+                <p>Provinsi : </p>
+                <select  name="provinsi">
+                    <option value="banten">banten</option>
+                    <option value="bandung">bandung</option>
+                </select>
+            </div>
+
+            <div class="column">
+                <p>pesan : </p>
+                <input type="text" name="pesan" placeholder="pesan">
+            </div>
+            <button>Hubungin sekarang !!</button>
+            </div>
+            <div id="overlay" class="overlay">
+                <div class="overlay-content">
+                  <span id="close">&times;</span>
+                  <p>Pesan Anda telah terkirim! Terima kasih atas pesan Anda.</p>
+                </div>
+              </div>
+        </div>
+        </section>
+        
+
+
+
+
+
+        <!-- javascript -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
